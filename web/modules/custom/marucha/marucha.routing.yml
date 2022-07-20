@@ -5,3 +5,11 @@ marucha.index:
     _title: 'Hello world'
   requirements:
     _permission: 'access content'
+
+marucha.form:
+  path: 'marucha/testform'
+  defaults:
+    _form: '\Drupal\marucha\Form\FirstForm'
+    _title: 'Marucha First Form'
+  requirements:
+    _permission: 'access content'
