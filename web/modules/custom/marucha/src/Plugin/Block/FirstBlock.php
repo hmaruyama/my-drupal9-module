@@ -19,8 +19,6 @@ class FirstBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
-    return [
-      '#markup' => $this->t('this is Marucha Block!'),
-    ];
+    return \Drupal::formBuilder()->getForm('Drupal\marucha\Form\FirstForm');
   }
 }
