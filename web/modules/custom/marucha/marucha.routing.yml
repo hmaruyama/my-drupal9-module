@@ -1,0 +1,7 @@
+marucha.index:
+  path: '/marucha/test'
+  defaults:
+    _controller: '\Drupal\marucha\Controller\FirstController::index'
+    _title: 'Hello world'
+  requirements:
+    _permission: 'access content'
