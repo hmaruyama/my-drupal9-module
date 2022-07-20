@@ -8,3 +8,11 @@ config:
 
 env_file:
   - .env
+
+services:
+  phpmyadmin:
+    type: phpmyadmin
+  mailhog:
+    type: mailhog
+    hogfrom:
+      - appserver
