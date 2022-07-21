@@ -18,6 +18,12 @@ class FirstForm extends FormBase {
   }
 
   public function buildForm(array $form, FormStateInterface $form_state) {
+    $node = \Drupal::routeMatch()->getParameter('node');
+    $nid = 0;
+    if ( !(is_null($node)) ) {
+      $nid = (int)$node->id();
+    }
+
     $form['rate'] = [
       '#type' => 'radios',
       '#title' => $this->t('Please your rate.'),
@@ -26,6 +32,10 @@ class FirstForm extends FormBase {
         1 => $this->t('Soso'),
         2 => $this->t('Great'),
       ]
+    ];
+    $form['nid'] = [
+      '#type' => 'hidden',
+      '#value' => $nid,
     ];
     $form['submit'] = [
       '#type' => 'submit',
@@ -36,6 +46,8 @@ class FirstForm extends FormBase {
   }
 
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    \Drupal::messenger()->addMessage(t('Thank you for your rating!')); 
+    $rate = $form_state->getValue('rate');
+    $nid = $form_state->getValue('nid');
+    \Drupal::messenger()->addMessage(t('Thank you for your rating! rate = %rate, nid = %nid', ['%rate' => $rate, '%nid' => $nid])); 
   }
 }
