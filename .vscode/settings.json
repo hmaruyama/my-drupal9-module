@@ -2,5 +2,12 @@
   "workbench.colorCustomizations": {
     "titleBar.activeBackground": "#5c4ac4",
     "activityBarBadge.background": "#5c4ac4"
-  }
+  },
+  // PHP CodeSniffer. see https://www.drupal.org/docs/develop/development-tools/configuring-visual-studio-code#s-drupal-code-standards-configuration
+  "phpcs.enable": true,
+  "phpcs.standard": "Drupal,DrupalPractice",
+  "phpcs.executablePath": "/Users/hikarumaruyama/.composer/vendor/bin/phpcs",
+  // PHP Code Beautifier and Fixer
+  "phpcbf.standard": "Drupal,DrupalPractice",
+  "phpcbf.executablePath": "/Users/hikarumaruyama/.composer/vendor/bin/phpcbf"
 }
