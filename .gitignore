@@ -71,3 +71,7 @@
 /web/web.config
 
 /private
+
+/web/sites/default/default.settings.php
+/web/sites/default/default.services.yml
+/web/sites/development.services.yml
