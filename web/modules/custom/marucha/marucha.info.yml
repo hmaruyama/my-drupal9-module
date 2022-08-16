@@ -1,5 +1,4 @@
-name: 'Marucha Custom Module'
-type: module
-description: 'まる茶のカスタムモジュール'
+name: "Marucha module"
+description: "marucha test module"
 core_version_requirement: ^9
-package: Custom
+type: module
