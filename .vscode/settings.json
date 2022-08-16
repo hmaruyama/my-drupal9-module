@@ -1,4 +1,5 @@
 {
+  // Workspace UI color changing.
   "workbench.colorCustomizations": {
     "titleBar.activeBackground": "#5c4ac4",
     "activityBarBadge.background": "#5c4ac4"
