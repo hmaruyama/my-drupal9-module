@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file
+ * Hook implements.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function marucha_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id == 'comment_comment_form') {
+    $form['actions']['submit']['#value'] = t('Comment!');
+    $form['actions']['preview']['#value'] = t('Get a preview!');
+  }
+}
