@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Hook implements.
+ */
+
+/**
+ * Implements hook_cron().
+ */
+function marucha_cron() {
+  \Drupal::messenger()->addMessage('marucha_cronが呼び出されました。');
+}
