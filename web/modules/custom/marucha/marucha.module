@@ -5,9 +5,26 @@
  * Hook implements.
  */
 
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+
 /**
  * Implements hook_cron().
  */
 function marucha_cron() {
   \Drupal::messenger()->addMessage('marucha_cronが呼び出されました。');
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function marucha_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  \Drupal::moduleHandler()->invokeAll('marucha_hello_world');
+}
+
+/**
+ * Implements hook_marucha_hello_world().
+ */
+function marucha_marucha_hello_world() {
+  \Drupal::messenger()->addMessage('hook_marucha_hello_worldが呼び出されました。');
 }
