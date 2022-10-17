@@ -4,12 +4,30 @@ namespace Drupal\marucha\EventSubscriber;
 
 use Drupal\Core\Config\ConfigCrudEvent;
 use Drupal\Core\Config\ConfigEvents;
+use Drupal\Core\Messenger\MessengerInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
- * Subscribe to some events.
+ * Subscribe to a config event.
  */
 class ConfigSubscriber implements EventSubscriberInterface {
+
+  /**
+   * The messenger service.
+   *
+   * @var Drupal\Core\Messenger\MessengerInterface
+   */
+  protected $messenger;
+
+  /**
+   * Constructs a object.
+   *
+   * @param Drupal\Core\Messenger\MessengerInterface $messenger
+   *   The messenger service.
+   */
+  public function __construct(MessengerInterface $messenger) {
+    $this->messenger = $messenger;
+  }
 
   /**
    * {@inheritDoc}
@@ -28,7 +46,7 @@ class ConfigSubscriber implements EventSubscriberInterface {
    */
   public function onConfigSave(ConfigCrudEvent $event) {
     $config = $event->getConfig();
-    \Drupal::messenger()->addStatus('設定が保存されました：' . $config->getName());
+    $this->messenger->addStatus('設定が保存されました：' . $config->getName());
   }
 
 }

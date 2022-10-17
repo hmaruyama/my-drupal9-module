@@ -1,5 +1,6 @@
 services:
   marucha.config_subscriber:
     class: '\Drupal\marucha\EventSubscriber\ConfigSubscriber'
+    arguments: ['@messenger']
     tags:
       - { name: 'event_subscriber' }
