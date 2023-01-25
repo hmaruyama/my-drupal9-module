@@ -1,0 +1,7 @@
+marucha.admin_settings:
+  path: '/admin/config/marucha'
+  defaults:
+    _form: '\Drupal\marucha\Form\MaruchaConfigForm'
+    _title: 'Marucha settings'
+  requirements:
+    _permission: 'administer site configuration'
