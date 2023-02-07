@@ -16,3 +16,9 @@ services:
     type: mailhog
     hogfrom:
       - appserver
+
+tooling:
+  phpunit:
+    service: appserver
+    cmd:
+      - appserver: php /app/vendor/bin/phpunit -c /app/phpunit.xml
