@@ -1,0 +1,7 @@
+marucha.page:
+  path: '/marucha/page'
+  defaults:
+    _controller: '\Drupal\marucha\Controller\MaruchaController::index'
+    _title: 'Marucha page'
+  requirements:
+    _permission: 'access content'
